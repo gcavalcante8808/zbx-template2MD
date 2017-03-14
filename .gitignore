@@ -98,3 +98,6 @@ templatesubs.py
 zbx_export_templates.xml
 .idea/
 template_doc.md
+zbx_templates.xml
+template2MD
+

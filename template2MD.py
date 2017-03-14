@@ -54,7 +54,7 @@ content = template_api.parseString(zbx_template, silence=True)
 
 templates = content.templates.get_template()
 
-with open('template_doc.md', 'w') as openfile:
+with open('zbx_templates.md', 'w') as openfile:
     for template in templates:
 
         openfile.write(template_info.substitute(template_name=template.template,
