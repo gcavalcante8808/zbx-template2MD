@@ -12,7 +12,7 @@ How to Install
 You can grab the binary directly from the releases page. After the download, mark it as executable and run it from the folder where the "zbx_export_templates.xml" files resides. Something like the following should work:
 
 ```
-    wget https://github.com/gcavalcante8808/zabbix-template2MD/releases/download/latest/template2MD
+    wget https://github.com/gcavalcante8808/zbx-template2MD/releases/download/latest/template2MD
     chmod +x template2MD
     ./template2MD
 ```
