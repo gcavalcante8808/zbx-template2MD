@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="zabbix_export">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="templates"/>
+      </xs:sequence>
+      <xs:attribute name="date" use="required" type="xs:NMTOKEN"/>
+      <xs:attribute name="version" use="required" type="xs:decimal"/>
+    </xs:complexType>
+  </xs:element>
+
+<!-- Templates -->
+  <xs:element name="templates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="template"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="template">
+  	<xs:sequence>
+  		<xs:element name="template" type="xs:string"/>
+  		<xs:element name="name" type="xs:string"/>
+  		<xs:element name="description" type="xs:string"/>
+  		<xs:element ref="groups"/>
+  		<xs:element ref="applications"/>
+  		<xs:element ref="items"/>
+  	</xs:sequence>
+  </xs:element>
+
+<!-- Groups-->
+  <xs:element name="groups">
+  	<xs:complexType>
+  		<xs:sequence>
+  			<xs:element maxOccurs="unbounded" ref="group"/>
+  		</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="group">
+  	<xs:sequence>
+  		<xs:element name="name" type="xs:string"/>
+  	</xs:sequence>
+  </xs:element>
+
+<!-- Applications-->
+  <xs:element name="applications">
+  	<xs:complexType>
+  		<xs:sequence>
+  			<xs:element maxOccurs="unbounded" ref="application"/>
+  		</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="application">
+  	<xs:sequence>
+  		<xs:element name="name" type="xs:string"/>
+  	</xs:sequence>
+  </xs:element>
+
+<!-- Items-->
+  <xs:element name="items">
+  	<xs:complexType>
+  		<xs:sequence>
+  			<xs:element maxOccurs="unbounded" ref="item"/>
+  		</xs:sequence>
+  	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="item">
+  	<xs:sequence>
+  		<xs:element name="name" type="xs:string"/>
+		<xs:element name="type" type="xs:integer"/>
+  		<xs:element name="snmp_community" type="xs:string"/>
+  		<xs:element name="multiplier" type="xs:integer"/>
+  		<xs:element name="snmp_oid" type="xs:string"/>
+  		<xs:element name="key" type="xs:string"/>
+  		<xs:element name="delay" type="xs:integer"/>
+  		<xs:element name="history" type="xs:integer"/>
+  		<xs:element name="trends" type="xs:integer"/>
+  		<xs:element name="status" type="xs:integer"/>
+  		<xs:element name="value_type" type="xs:integer"/>
+		<xs:element name="units" type="xs:string"/>
+		<xs:element name="delta" type="xs:integer"/>
+		<xs:element name="snmpv3_contextname" type="xs:string"/>
+		<xs:element name="snmpv3_securityname" type="xs:string"/>
+		<xs:element name="snmpv3_authprotocol" type="xs:integer"/>
+		<xs:element name="snmpv3_authpassphrase" type="xs:string"/>
+		<xs:element name="snmpv3_privprotocol" type="xs:integer"/>
+		<xs:element name="formula" type="xs:string"/>
+		<xs:element name="delay_flex" type="xs:string"/>
+		<xs:element name="params" type="xs:string"/>
+		<xs:element name="ipmi_sensor" type="xs:string"/>
+		<xs:element name="data_type" type="xs:integer"/>
+		<xs:element name="authtype" type="xs:integer"/>
+		<xs:element name="username" type="xs:string"/>
+		<xs:element name="password" type="xs:string"/>
+		<xs:element name="publickey" type="xs:string"/>
+		<xs:element name="privatekey" type="xs:string"/>
+		<xs:element name="port" type="xs:string"/>
+		<xs:element name="description" type="xs:string"/>
+		<xs:element name="inventory_link" type="xs:string"/>
+		<xs:element ref="applications"/>
+		<xs:element name="logtimefmt" type="xs:string"/>
+	</xs:sequence>
+  </xs:element>
+
+</xs:schema>
